@@ -1,0 +1,182 @@
+/* Small Screen */
+.container {
+    margin: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__left {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form__title {
+    color: #F72585; 
+    font-size: 2.34rem;
+    /* text-align: center; */ 
+}
+.form__label {
+    text-align: left;
+}
+ 
+.form__input {
+    width: 100%;
+    padding:0.4rem;
+    border-radius: 5px;
+    border: 1px solid black ;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.form__button {
+    padding: 0.8rem 2rem;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #F72585;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.form__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+    /*
+     * Nothing TODO Here.
+     * We dont change style form. 
+     */
+     .form {
+        margin: 0 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-items: center; */
+        text-align: left;
+    }
+    .form__left {
+        flex-basis:50%;
+    }
+    .form__right { 
+        flex-basis:45%;
+    }
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+    .container {
+        max-width: 800px;
+        margin: 3rem auto;
+    }
+
+    .form {
+        margin: 0 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-items: center; */
+        text-align: left;
+    }
+
+    .form__left {
+        flex-basis: 50%;
+    }
+    .form__right {
+        width: 45%;
+    }
+
+}
+
+
+/* Small Screen */
+/* .container {
+    margin: 1rem;
+} 
+ .form h3{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.form__left {
+    margin-bottom: 1rem;
+}
+.form__right {
+    margin-bottom: 1rem;
+}
+
+.form__title {
+    color: #F72585;
+    margin-bottom: 1rem;
+    font-size: 2.44rem;
+} 
+
+.form__label {
+    color: #F72585;
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+.form__input {
+    width: 100%;
+    padding:0.6rem;
+    border-radius: 5px;
+    border: 1px solid black ;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.form__button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #F72585;
+    color: #fff;
+    width: 100%;
+    margin-top:1rem
+}
+
+.form__image {
+    max-width: 360px;
+    height: auto;
+    border-radius: 25px;
+}
+
+/* Medium Screen 
+@media (min-width: 768px) {
+    /*
+     * Nothing TODO Here.
+     * We dont change style form. 
+     
+}
+*/
+/* Large Screen 
+@media (min-width: 992px) {
+    .container {
+        max-width: 800px;
+        margin: 3rem auto;
+    }
+
+    .form {
+        margin: 0 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .form__left {
+        flex-basis: 40%;
+    }
+    
+    .form__right {
+        width: 23rem;
+    }
+    
+
+} */
