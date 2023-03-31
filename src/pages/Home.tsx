@@ -16,11 +16,11 @@ const Main = () => {
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Main />  
       <Footer />
-    </div>
+    </>
   )
 }
 
