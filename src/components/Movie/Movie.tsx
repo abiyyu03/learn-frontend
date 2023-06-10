@@ -1,9 +1,10 @@
 // import styles from './Movie.module.css';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledMovie = styled.div`
     margin-bottom: 1rem;
-
+    
     img {
         border-radius: 25px;
         max-width: 100%;
@@ -21,6 +22,9 @@ const StyledMovie = styled.div`
         color: #64748b;
     }
 
+    .link {
+        text-decoration:none;
+    }
     @media (min-width: 768px) { 
         flex-basis: 50%; 
       }
@@ -37,10 +41,12 @@ const Movie = (props: any) => {
 
     return (
         <StyledMovie>
-            <img src={movie.poster || `http://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-                alt={movie.title} />
-            <h3>{movie.title}</h3>
-            <p>{movie.year || movie.release_date}</p>
+            <Link to={`/movie/${movie.id}`} className="link">
+                <img src={movie.poster || `http://image.tmdb.org/t/p/w300/${movie.poster_path}` || ''}
+                    alt={movie.title} />
+                <h3>{movie.title}</h3>
+                <p>{movie.year || movie.release_date}</p>
+            </Link>
         </StyledMovie>
     );
 }

@@ -1,17 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
 import Movies from '../../components/Movies/Movies';
+import ENDPOINT from '../../utils/constants/endpoint';
 
 const TopRated = () => {
     const [movies, setMovies] = useState([]);
-    const API_KEY = import.meta.env.VITE_MOVIE_API_KEY = "033e6e1f649a29424db2b7fc33aa5271";
-    const URL = `http://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
 
     const fetchTopRatedMovie = async () => {
-        const response = await axios(URL);
+        const response = await axios(ENDPOINT.TOP_RATED);
 
         setMovies(response.data.results);
     }

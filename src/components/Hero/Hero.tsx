@@ -3,6 +3,7 @@ import styles from "./Hero.module.css";
 import Button from '../ui/Button/Button';
 import styled from 'styled-components';
 import axios from "axios";
+import ENDPOINT from '../../utils/constants/endpoint';
 
 const StyledHero = styled.section`
     margin: 1rem;
@@ -58,13 +59,11 @@ const StyledHero = styled.section`
 
 const Hero = () => {
     const [movie, setMovie] = useState("");
-    const API_KEY = import.meta.env.VITE_MOVIE_API_KEY;
     const genres = movie && movie.genres.map((genre: any) => genre.name).join(", ");
-    const idTrailer = movie && movie.videos.results[0].key;
+    const idTrailer = (movie && movie.videos.results[0].key) || ``;
 
     const fetchTrendingMovie = async () => {
-        const URL = `http://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
-        const response = await axios(URL);
+        const response = await axios(ENDPOINT.TRENDING);
 
         return response.data.results[0]
     }
@@ -73,8 +72,7 @@ const Hero = () => {
         const trendingMovie = await fetchTrendingMovie();
         const id = trendingMovie.id;
 
-        const URL = `http://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
-        const response = await axios(URL);
+        const response = await axios(ENDPOINT.DETAIL(id));
 
         setMovie(response.data);
     }
