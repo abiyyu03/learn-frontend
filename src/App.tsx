@@ -10,6 +10,7 @@ import './index.css'
 import theme from "./utils/constants/theme";
 import { ThemeProvider } from "styled-components";
 import { Routes, Route } from 'react-router-dom';
+import DetailPage from './pages/movie/DetailPage'
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                         <Route path="/movie/now-playing" element={<NowPlaying />}></Route>
                         <Route path="/movie/popular" element={<Popular />}></Route>
                         <Route path="/movie/top-rated" element={<TopRated />}></Route>
+                        <Route path="/movie/:id" element={<DetailPage />}></Route>
                     </Routes>
                 </Layout>
             </ThemeProvider>
