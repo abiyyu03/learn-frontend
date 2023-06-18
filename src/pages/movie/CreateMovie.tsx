@@ -1,10 +1,13 @@
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import AddMovieForm from '../../components/AddMovieForm/AddMovieForm';
+import Hero from '../../components/Hero/Hero';
 
 const CreateMovie = () => {
     return (
         <div>
-            <h2>Hello create</h2>
+            <Hero />
+            <AddMovieForm />
         </div>
     )
 };

@@ -20,7 +20,7 @@ const DetailPage = () => {
     return (
         <div>
             <DetailMovie />
-            <Movies movies={movies} title="Recommendation" />
+            <Movies title="Recommendation" />
         </div>
 
     )

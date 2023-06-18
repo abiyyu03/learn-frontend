@@ -19,7 +19,7 @@ const NowPlaying = () => {
     return (
         <div>
             <Hero />
-            <Movies movies={movies} title="Now Playing"></Movies>
+            <Movies title="Now Playing" />
         </div>
     )
 };

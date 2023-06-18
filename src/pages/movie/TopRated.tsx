@@ -20,7 +20,7 @@ const TopRated = () => {
     return (
         <div>
             <Hero />
-            <Movies movies={movies} title="Top Rated"></Movies>
+            <Movies title="Top Rated"></Movies>
         </div>
     )
 };

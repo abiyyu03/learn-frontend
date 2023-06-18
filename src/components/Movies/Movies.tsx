@@ -1,24 +1,14 @@
 import styles from './Movies.module.css';
 import Movie from '../Movie/Movie';
-import Counter from '../Counter';
-import data from '../../utils/constants/data';
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 
 const Movies = (props: any) => {
-    const { movies, setMovies } = props;
-    const handleClick = () => {
-        const movie = {
-            id: nanoid(),
-            title: "Jigsaw digidaw",
-            year: 2023,
-            type: "movie",
-            poster: "https://picsum.photos/300/400"
-        };
+    const { title } = props;
 
-        // Movies.push(movie);
-        setMovies([...movies, movie]);
-    }
+    const movies = useSelector((store: any) => store.movies.movies);
+
+    console.log(movies);
     return (
         <div className={styles.container}>
             <section className={styles.movies}>
@@ -28,8 +18,6 @@ const Movies = (props: any) => {
                         return <Movie key={movie.id} movie={movie} />;
                     })}
                 </div>
-                {/* <button onClick={handleClick}>Add Movie</button> */}
-                {/* <Counter /> */}
             </section>
         </div>
     );

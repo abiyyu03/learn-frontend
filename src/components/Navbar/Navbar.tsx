@@ -61,9 +61,9 @@ const Navbar = () => {
                     <li>
                         <Link to="/" className="navbar_link">Home</Link>
                     </li>
-                    {/* <li>
+                    <li>
                         <Link to="/movie/create-movie" className="navbar_link">Add Movie</Link>
-                    </li> */}
+                    </li>
                     <li>
                         <Link to="/movie/popular" className="navbar_link">Popular</Link>
                     </li>
