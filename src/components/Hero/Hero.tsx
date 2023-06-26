@@ -4,6 +4,8 @@ import Button from '../ui/Button/Button';
 import styled from 'styled-components';
 import axios from "axios";
 import ENDPOINT from '../../utils/constants/endpoint';
+import type { GenreType, MovieType } from '../../type/Type';
+import { initialStateValue } from '../../type/Type';
 
 const StyledHero = styled.section`
     margin: 1rem;
@@ -56,12 +58,10 @@ const StyledHero = styled.section`
         
     }
 `
-
 const Hero = () => {
-    const [movie, setMovie] = useState("");
+    const [movie, setMovie] = useState<MovieType>(initialStateValue);
     const genres = movie && movie.genres.map((genre: any) => genre.name).join(", ");
     const idTrailer = (movie && movie.videos.results[0].key) || ``;
-
     const fetchTrendingMovie = async () => {
         const response = await axios(ENDPOINT.TRENDING);
 

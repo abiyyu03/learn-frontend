@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import styled from 'styled-components';
 import Button from "../ui/Button/Button";
 import ENDPOINT from '../../utils/constants/endpoint';
+import type { GenreType, MovieType } from '../../type/Type';
+import { initialStateValue } from '../../type/Type';
 
 const StyledHero = styled.section`
     margin: 1rem;
@@ -59,10 +61,9 @@ const StyledHero = styled.section`
 
 const DetailMovie = () => {
     const { id } = useParams();
-    const [movie, setMovie] = useState("");
+    const [movie, setMovie] = useState<MovieType>(initialStateValue);
     const genres = movie && movie.genres.map((genre: any) => genre.name).join(", ");
-    // const idTrailer = (movie && movie.videos.results[0].key) ?? ``;
-
+    const idTrailer = (movie && movie.videos.results[0].key) ?? ``;
     const fetchDetailMovie = async () => {
         const response = await axios(ENDPOINT.DETAIL(id));
         setMovie(response.data);
@@ -79,7 +80,7 @@ const DetailMovie = () => {
                     <h3>{movie.title}</h3>
                     <p className="hero_genre">{genres}</p>
                     <p className="hero_description">{movie.overview}</p>
-                    {/* <Button as="a" href={`https://youtube.com/watch?v=${idTrailer}`} target="_blank" variant="primary" buttonSize="md">Watch Trailer</Button> */}
+                    <Button as="a" href={`https://youtube.com/watch?v=${idTrailer}`} target="_blank" variant="primary" buttonSize="md">Watch Trailer</Button>
                 </div>
                 <div className="hero_right">
                     <img src={movie.poster || `http://image.tmdb.org/t/p/w500/${movie.backdrop_path}` || ''} alt="" />

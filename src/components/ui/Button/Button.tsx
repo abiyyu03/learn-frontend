@@ -1,14 +1,6 @@
 import styled, { css } from 'styled-components';
 import theme from "../../../utils/constants/theme";
-
-interface colorType {
-    primary: String,
-    secondary: String,
-    danger: String,
-    warning: String,
-    success: String,
-    default: String,
-}
+import type { ButtonPropsType } from '../../../type/Type';
 
 const Button = styled.button` 
     border:none;
@@ -16,7 +8,7 @@ const Button = styled.button`
     color:#fff;
     cursor:pointer;
     
-    background-color:${(props: any) => {
+    background-color:${(props: ButtonPropsType) => {
         if (props.variant) {
             return theme.colors[props.variant];
         } else {
@@ -24,14 +16,14 @@ const Button = styled.button`
         }
     }};
 
-    ${(props: any) => {
+    ${(props: ButtonPropsType) => {
         return props.full && css`
             width:100%;
             displary:block; 
         `;
     }};
 
-    ${(props: any) => {
+    ${(props: ButtonPropsType) => {
         if (props.buttonSize === "sm") {
             return css`
                 font-size: ${theme.buttonSize.sm.fontSize};

@@ -7,8 +7,6 @@ const Movies = (props: any) => {
     const { title } = props;
 
     const movies = useSelector((store: any) => store.movies.movies);
-
-    console.log(movies);
     return (
         <div className={styles.container}>
             <section className={styles.movies}>

@@ -8,7 +8,7 @@ import { addMovie } from '../../feature/movieSlice/movieSlice';
 import { useNavigate } from 'react-router-dom';
 
 
-const AddMovieForm = (props: any) => {
+const AddMovieForm = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

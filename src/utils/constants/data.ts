@@ -1,4 +1,12 @@
-const data = [
+interface Data {
+    id: String;
+    title: String;
+    year: String;
+    type: String;
+    poster: String;
+}
+
+const data: Data[] = [
 	{
 		id: 'tt10872600',
 		title: 'Spider-Man',
@@ -38,7 +46,7 @@ const data = [
 		id: 'tt8097030',
 		title: 'Turning Red',
 		year: '2022',
-		yype: 'movie',
+		type: 'movie',
 		poster: 'https://m.media-amazon.com/images/M/MV5BNjY0MGEzZmQtZWMxNi00MWVhLWI4NWEtYjQ0MDkyYTJhMDU0XkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_SX300.jpg',
 	},
 	{

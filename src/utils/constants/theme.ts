@@ -1,4 +1,4 @@
-const theme = {
+const theme: any = {
     colors: {   
         primary: "#F72585",
         secondary: "#b5179e",

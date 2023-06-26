@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Container from '../components/Container/Container';
 
-const CreateMovie = (props) => {
+const CreateMovie = (props: any) => {
     return (
         <div>
             <Navbar></Navbar>
