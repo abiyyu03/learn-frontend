@@ -90,7 +90,7 @@ const Hero = () => {
                     <Button as="a" href={`https://youtube.com/watch?v=${idTrailer}` ?? ``} target="_blank" variant="primary" buttonSize="md">Watch Trailer</Button>
                 </div>
                 <div className="hero_right">
-                    <img src={movie.poster || `http://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt="" />
+                    <img src={movie.poster || `https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt="" />
                 </div>
             </main>
         </StyledHero>
