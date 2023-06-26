@@ -8,13 +8,17 @@ interface ButtonPropsType {
     target?: string,
 }
 
+interface MoviesTitlePropsType {
+    title?:string,
+}
+
 interface GenreType {
     id: number,
     name: string
 }
 interface ResultType {
-    id: string,
-    key: string,
+    id?: string,
+    key?: string,
 }
 interface VideosType {
     results: ResultType[],
@@ -31,9 +35,8 @@ interface MovieType {
 }
 const initialStateValue = {
     genres: [],
-    videos: {results:[]},
+    videos: {results:[{}]},
     poster_path: "",
-    // results: '',
     poster: "",
     overview: "",
     title: "",
@@ -44,5 +47,6 @@ export { initialStateValue }
 export type {
     GenreType,
     MovieType,
-    ButtonPropsType
+    ButtonPropsType,
+    MoviesTitlePropsType
 }

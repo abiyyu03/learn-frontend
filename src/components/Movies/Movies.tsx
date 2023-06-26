@@ -1,10 +1,9 @@
 import styles from './Movies.module.css';
 import Movie from '../Movie/Movie';
 import { useSelector } from 'react-redux';
-import { nanoid } from 'nanoid';
+import type { MoviesTitlePropsType } from '../../type/Type';
 
-const Movies = (props: any) => {
-    const { title } = props;
+const Movies = (props: MoviesTitlePropsType) => {
 
     const movies = useSelector((store: any) => store.movies.movies);
     return (

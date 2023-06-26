@@ -3,13 +3,17 @@ import { useEffect, useState } from 'react';
 import Hero from '../../components/Hero/Hero';
 import Movies from '../../components/Movies/Movies';
 import ENDPOINT from '../../utils/constants/endpoint';
+import { useDispatch } from "react-redux";
+import { updateMovies } from "../../feature/movieSlice/movieSlice";
 
 const NowPlaying = () => {
-    const [movies, setMovies] = useState([]);
+    const dispatch = useDispatch();
 
     const fetchNowPlayingMovie = async () => {
         const response = await axios(ENDPOINT.NOW_PLAYING);
-        setMovies(response.data.results);
+        const movies = response.data.results;
+
+        dispatch(updateMovies(movies));
     }
 
     useEffect(() => {

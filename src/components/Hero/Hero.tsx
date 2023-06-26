@@ -4,7 +4,7 @@ import Button from '../ui/Button/Button';
 import styled from 'styled-components';
 import axios from "axios";
 import ENDPOINT from '../../utils/constants/endpoint';
-import type { GenreType, MovieType } from '../../type/Type';
+import type { MovieType } from '../../type/Type';
 import { initialStateValue } from '../../type/Type';
 
 const StyledHero = styled.section`
@@ -72,7 +72,7 @@ const Hero = () => {
         const trendingMovie = await fetchTrendingMovie();
         const id = trendingMovie.id;
 
-        const response = await axios(ENDPOINT.DETAIL(id));
+        const response = await axios(ENDPOINT.DETAIL('tt10872600'));
 
         setMovie(response.data);
     }
@@ -87,7 +87,7 @@ const Hero = () => {
                     <h3>{movie.title}</h3>
                     <p className="hero_genre">{genres}</p>
                     <p className="hero_description">{movie.overview}</p>
-                    <Button as="a" href={`https://youtube.com/watch?v=${idTrailer}`} target="_blank" variant="primary" buttonSize="md">Watch Trailer</Button>
+                    <Button as="a" href={`https://youtube.com/watch?v=${idTrailer}` ?? ``} target="_blank" variant="primary" buttonSize="md">Watch Trailer</Button>
                 </div>
                 <div className="hero_right">
                     <img src={movie.poster || `http://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt="" />
